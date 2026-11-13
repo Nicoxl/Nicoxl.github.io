@@ -1,4 +1,4 @@
-# Nicola Benetti — Professional Webpage
+# Nicola Benetti — My Professional Page
 
 Pagina personale realizzata con design **Bento Grid** minimale e responsive, ospitata gratuitamente su **GitHub Pages**.
 
