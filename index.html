@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nicola Benetti — Web Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0d10;
+      --card-bg: #14171d;
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-hover: #1b1f27;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --accent: #d4a359;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 32px 16px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 820px;
+    }
+
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
+      padding: 24px;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+    }
+
+    a.card:hover {
+      transform: translateY(-4px);
+      background: var(--card-hover);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Dimensioni riquadri Bento */
+    .span-2 { grid-column: span 2; }
+    .span-4 { grid-column: span 4; }
+    .row-2 { grid-row: span 2; }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(212, 163, 89, 0.15);
+      color: var(--accent);
+      margin-bottom: 14px;
+      width: fit-content;
+    }
+
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+
+    .bio {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .card-icon {
+      font-size: 1.5rem;
+      margin-bottom: 18px;
+    }
+
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .card-sub {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .project-card {
+      background: linear-gradient(135deg, #1a1815 0%, #14171d 100%);
+      border-color: rgba(212, 163, 89, 0.25);
+    }
+
+    .arrow {
+      align-self: flex-end;
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+    a.card:hover .arrow {
+      transform: translate(3px, -3px);
+      color: var(--text-main);
+    }
+
+    @media (max-width: 720px) {
+      .bento-grid { grid-template-columns: repeat(2, 1fr); }
+      .span-4 { grid-column: span 2; }
+    }
+
+    @media (max-width: 440px) {
+      .bento-grid { grid-template-columns: 1fr; }
+      .span-2, .span-4 { grid-column: span 1; }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <div class="bento-grid">
+      
+      <!-- Profilo principale -->
+      <div class="card span-2 row-2">
+        <div>
+          <span class="badge">Studente di Informatica • UniVR</span>
+          <h1>Nicola Benetti</h1>
+          <p class="bio">Studio Informatica all'Università di Verona e ho una grande passione per lo sviluppo web e la programmazione in generale.
+            <br> Mi piace sperimentare, imparare cose nuove e mettermi in gioco: su richiesta provo volentieri a realizzare progetti e soluzioni su misura.</p>
+        </div>
+        <p class="card-sub" style="margin-top: 20px;">📍 Vicenza, Veneto, Italia</p>
+      </div>
+
+      <!-- Progetto in evidenza -->
+      <a href="https://jdledprojectlux.com" target="_blank" rel="noopener noreferrer" class="card span-2 project-card">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+          <span class="badge" style="margin-bottom:0;">Ultimo Progetto</span>
+          <span class="arrow">↗</span>
+        </div>
+        <div style="margin-top: 16px;">
+          <div class="card-title">JDLed Illuminazione</div>
+          <div class="card-sub">Design, sviluppo front-end, multilingua e SEO</div>
+        </div>
+      </a>
+
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="card">
+        <div style="display:flex; justify-content:space-between;">
+          <span class="card-icon">💼</span>
+          <span class="arrow">↗</span>
+        </div>
+        <div>
+          <div class="card-title">LinkedIn (WIP) </div>
+          <div class="card-sub">Profilo professionale</div>
+        </div>
+      </a>
+
+      <!-- GitHub -->
+      <a href="https://github.com/Nicoxl" target="_blank" rel="noopener noreferrer" class="card">
+        <div style="display:flex; justify-content:space-between;">
+          <span class="card-icon">💻</span>
+          <span class="arrow">↗</span>
+        </div>
+        <div>
+          <div class="card-title">GitHub</div>
+          <div class="card-sub">Codice & Repository</div>
+        </div>
+      </a>
+
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/nicolabenetti06" target="_blank" rel="noopener noreferrer" class="card span-2">
+        <div style="display:flex; justify-content:space-between;">
+          <span class="card-icon">📸</span>
+          <span class="arrow">↗</span>
+        </div>
+        <div>
+          <div class="card-title">Instagram</div>
+          <div class="card-sub">Aggiornamenti e contatti diretti</div>
+        </div>
+      </a>
+
+      <!-- Email diretta -->
+      <a href="mailto:benettinic00@gmail.com" class="card span-2">
+        <div style="display:flex; justify-content:space-between;">
+          <span class="card-icon">✉️</span>
+          <span class="arrow">↗</span>
+        </div>
+        <div>
+          <div class="card-title">Scrivimi una Email</div>
+          <div class="card-sub">Per idee, progetti web o collaborazioni</div>
+        </div>
+      </a>
+
+    </div>
+  </main>
+</body>
+</html>
